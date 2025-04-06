@@ -1,6 +1,7 @@
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import SketchBox from "../SketchBox/SketchBox";
 import "./TicTacToeBoard.css";
+import winSound from "../../assets/winsound.wav"; // Add this import
 
 let data = ["", "", "", "", "", "", "", "", ""];
 
@@ -16,6 +17,7 @@ const TicTacToeBoard = ({
   const [isWin, setIsWin] = useState(false);
   const [winColor, setWinColor] = useState("");
   const [winSet, setWinSet] = useState([]);
+  const audioRef = useRef(new Audio(winSound));
   useEffect(() => {
     if (isResetRequested) {
       data = ["", "", "", "", "", "", "", "", ""];
@@ -44,6 +46,7 @@ const TicTacToeBoard = ({
       if (data[a] && data[a] === data[b] && data[a] === data[c]) {
         setLock(true);
         setWinSet(pattern);
+        audioRef.current.play();
         return data[a];
       }
     }
