@@ -1,0 +1,33 @@
+.reset-button-container {
+  margin: 20px 0;
+}
+
+.reset-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.reset-button:hover {
+  transform: scale(1.05);
+}
+
+.reset-button:active {
+  transform: scale(0.95);
+}
+
+.button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d1dde8;
+  font-size: 20px;
+  font-family: "Architects Daughter", cursive;
+  font-weight: bold;
+  pointer-events: none;
+  white-space: nowrap;
+}

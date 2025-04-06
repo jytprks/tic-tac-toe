@@ -1,0 +1,56 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: #2c3e50;
+  margin: 4px;
+  background: 
+    linear-gradient(to right, #2c3e50 2px, transparent 2px) 0 0,
+    linear-gradient(to right, #2c3e50 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, #2c3e50 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #2c3e50 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, #2c3e50 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #2c3e50 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, #2c3e50 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #2c3e50 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(to right, #2c3e50 2px, transparent 2px) 0 0,
+    linear-gradient(to right, #2c3e50 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, #2c3e50 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #2c3e50 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, #2c3e50 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #2c3e50 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, #2c3e50 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #2c3e50 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  transform: rotate(2deg);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.box:active {
+  transform: scale(0.95);
+}
